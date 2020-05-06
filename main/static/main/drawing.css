@@ -1,5 +1,5 @@
 #svg {
-    z-index: 0;
+    z-index: 1000;
     position: absolute;
 }
 
@@ -15,7 +15,8 @@
 
 circle {
     animation-name: disappear;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+    animation-iteration-count: initial;
+    filter: blur(3px);
 }

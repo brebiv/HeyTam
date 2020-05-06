@@ -6,7 +6,8 @@ body {
     margin-top: 2%;
 }
 
-#nav {
+#logo {
+    pointer-events: none;
 }
 
 @media (min-width: 576px) {
