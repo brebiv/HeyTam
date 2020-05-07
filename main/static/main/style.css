@@ -1,5 +1,6 @@
 body {
     z-index: 2;
+    min-width: 360px;
 }
 
 #logo-box {

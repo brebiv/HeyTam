@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             .attr("cy", coords[1])
             .attr('r', 20)
             .style('fill', "black")
-            .style('z-index', '-10');
+            .style('z-index', '10'); // Don't work
     }
 
     const svg = d3.select("#svg");
