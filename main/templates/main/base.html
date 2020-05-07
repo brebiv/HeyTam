@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <title>HeyTam</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        {% block includes %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid" id="header">
+            <div class="row justify-content-center">
+                <div id="logo-box">
+                        <div class="col align-self-center">
+                            <img src="{% static 'main/logo_heytam.png' %}" class="img-fluid rounded mx-auto d-block" id="logo" alt="HeyTam logo">
+                        </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" id="nav">
+                <div class="col-sm-7 d-flex justify-content-center">
+                    <ul>
+                        <li><a href="news/news.php" class="nav_button">News</a></li>
+                        <li><a href="programs/progs.html" class="nav_button">Products</a></li>
+                        <li><a href="about/about.html" class="nav_button">About us</a></li>
+                        <li><a href="#" class="nav_button">Exit</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
