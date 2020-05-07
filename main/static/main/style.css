@@ -1,3 +1,5 @@
+/* Header */
+
 body {
     z-index: 2;
 }
@@ -72,10 +74,19 @@ li {
     text-decoration: none;
 }
 
+
+/* Main page */
 #main {
     margin-top: 80px;
 }
 
 #quote {
     margin-top: 50px;
+}
+
+
+/* Products */
+
+#catalog {
+    margin-top: 120px;
 }
