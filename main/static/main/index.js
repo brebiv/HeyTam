@@ -13,14 +13,16 @@ let currentDots = 0;
 document.addEventListener("DOMContentLoaded", ()=>{
 
     function draw_point() {
-        const coords = d3.mouse(this);
-        const randomColor = getRandomColor();
-        svg.append("circle")
-            .attr("cx", coords[0])
-            .attr("cy", coords[1])
-            .attr('r', 20)
-            .style('fill', "black")
-            .style('z-index', '10'); // Don't work
+        if (allowDrawing) {
+            const coords = d3.mouse(this);
+            const randomColor = getRandomColor();
+            svg.append("circle")
+                .attr("cx", coords[0])
+                .attr("cy", coords[1])
+                .attr('r', 20)
+                .style('fill', "black")
+                .style('z-index', '10'); // Don't work
+        }
     }
 
     const svg = d3.select("#svg");

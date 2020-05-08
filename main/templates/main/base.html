@@ -7,34 +7,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'main/style.css' %}">
-        {% block includes %}
-        {% endblock %}
+        <link rel="stylesheet" href="{% static 'main/drawing.css' %}">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="{% static 'main/singlepage.js' %}"></script>
+        <script src="{% static 'main/index.js' %}"></script>
     </head>
     <body>
-        {% block drawing %}
-        {% endblock %}
+        <svg id="svg" style="width: 100%; height: 800px;"></svg>
         <div class="container-fluid" id="header">
             <div class="row justify-content-center">
                 <div id="logo-box">
-                        <div class="col align-self-center">
-                            <a href="{% url 'index' %}">
-                                <img src="{% static 'main/logo_heytam.png' %}" class="img-fluid rounded mx-auto d-block" id="logo" alt="HeyTam logo">
-                            </a>
-                        </div>
+                    <div class="col align-self-center">
+                        <a href="" data-name="index" id="logo-link">
+                            <img src="{% static 'main/logo_heytam.png' %}" class="img-fluid rounded mx-auto d-block" id="logo" alt="HeyTam logo">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="row justify-content-center" id="nav">
                 <div class="col-sm-7 d-flex justify-content-center">
                     <ul>
-                        <li><a href="news/news.php" class="nav_button">News</a></li>
-                        <li><a href="{% url 'products' %}" class="nav_button">Products</a></li>
-                        <li><a href="{% url 'about' %}" class="nav_button">About us</a></li>
+                        <li><a href="news/news.php" class="nav_button" data-name="news">News</a></li>
+                        <li><a href="" class="nav_button" data-name="products">Products</a></li>
+                        <li><a href="" class="nav_button" data-name="about">About us</a></li>
                         <li><a href="#" class="nav_button">Exit</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        {% block body %}
-        {% endblock %}
+        <div class="container-fluid">
+            <div class="row" id="main">
+            </div>
+        </div>
     </body>
 </html>
