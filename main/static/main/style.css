@@ -8,6 +8,7 @@ body {
 
 #logo-box {
     margin-top: 2%;
+    z-index: 1001;
 }
 
 #logo {
@@ -80,6 +81,7 @@ li {
 
 
 /* Main page */
+
 #main {
     margin-top: 80px;
 }
@@ -101,3 +103,5 @@ li {
     margin-top: 100px;
     background-color: white;
 }
+
+
