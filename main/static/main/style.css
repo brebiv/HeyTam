@@ -2,6 +2,7 @@
 
 body {
     z-index: 2;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
 #logo-box {
@@ -89,4 +90,11 @@ li {
 
 #catalog {
     margin-top: 120px;
+}
+
+/* About */
+
+#about-container {
+    margin-top: 100px;
+    background-color: white;
 }
