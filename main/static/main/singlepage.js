@@ -18,6 +18,9 @@ function loadContent(name) {
 }
 
 document.addEventListener("DOMContentLoaded", ()=> {
+    document.querySelector("body").style.opacity = 0;
+    $("body").animate({opacity: 1}, 1200)
+    var main = document.getElementById("main");
     loadContent('index')
     document.querySelectorAll(".nav_button").forEach(btn => {
         btn.onclick = function() {
@@ -27,7 +30,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
             } else if (name == "index" || name == "about") {
                 allowDrawing = true;
             }
-            loadContent(name);
+            $("#main").fadeOut("slow", function() {
+                loadContent(name);
+                $("#main").fadeIn("slow");
+            });
             return false;
         }
     });
