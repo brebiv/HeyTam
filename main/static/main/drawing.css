@@ -1,0 +1,22 @@
+#svg {
+    z-index: 1000;
+    position: absolute;
+}
+
+@keyframes disappear {
+    0%  {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+circle {
+    animation-name: disappear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: initial;
+    filter: blur(3px);
+}
