@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     $("body").animate({opacity: 1}, 1200)
     var main = document.getElementById("main");
     loadContent('index')
-    document.querySelectorAll(".nav_button").forEach(btn => {
+    document.querySelectorAll("a").forEach(btn => {
         btn.onclick = function() {
             let name = this.dataset.name;
             if (name == "products") {
