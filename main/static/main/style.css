@@ -107,4 +107,20 @@ li {
     background-color: white;
 }
 
+/* Product page */
 
+#product-content {
+    z-index: 1001;
+}
+
+#product-title {
+    float: left;
+}
+
+#short-description {
+    float: left;
+}
+
+#github-link {
+    width: 50px;
+}

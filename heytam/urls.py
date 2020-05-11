@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-#urlpatterns += staticfiles_urlpatterns()
+# Url to manage media files in database
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

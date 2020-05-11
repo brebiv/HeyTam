@@ -12,6 +12,9 @@ function loadContent(name) {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("main").innerHTML = request.responseText;
             document.title = titleBase + capitalize(name);
+            if (name == "products") {
+                new Products();
+            }
         }
     };
     request.send();

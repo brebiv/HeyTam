@@ -1,49 +1,18 @@
 {% load static %}
 
+<script src="{% static 'loadProducts.js' %}"></script>
 <div class="container" id="catalog">
     <h1 class="text-center display-5"><i>Products</i></h1>
     <div class="card-group">
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'main/logo_hd_red.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        {% for product in products %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image.url }}" class="card-image-top" alt="{{ product.titile }} image">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ product.title }}</h5>
+                      <p class="card-text">{{ product.short_description }}</p>
+                      <a href="" class="btn btn-primary product-link" data-name="{{ product.title }}" data-id="{{ product.id }}">More</a>
+                  </div>
             </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'main/logo_hd_red.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'main/logo_hd_red.png' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="{% static 'main/logo_hd_red.png' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-      </div>
-      {% for product in products %}
-      <div class="card" style="width: 18rem;">
-        <img src="{{ product.image.url }}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.title }}</h5>
-          <p class="card-text">{{ product.short_description }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        {% endfor %}
     </div>
-      {% endfor %}
 </div>
