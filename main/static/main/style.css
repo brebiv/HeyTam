@@ -122,18 +122,21 @@ li {
 
 /* Media queries */
 
+/* Make logo tinier on tablets and phones */
 @media (min-width: 576px) {
     #logo {
         height: 150px;
     }
 }
 
+/* for phones */
 @media (max-width: 480px) {
     #main {
         margin-top: 100px;
     }
 }
 
+/* for tablets */
 @media (min-width: 578px) and (max-width: 855px) {
     #main {
         margin-top: 110px;
