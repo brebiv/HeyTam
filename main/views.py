@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Quote
+import random
 import json
 
 # Create your views here.
@@ -8,7 +9,9 @@ def index(request):
     return render(request, "main/base.html")
 
 def main(request):
-    return render(request, 'main/main.html')
+    quotes = Quote.objects.all()
+    random_quote = random.choice(quotes)
+    return render(request, 'main/main.html', {"quote": random_quote})
 
 def products(request):
     products = [p for p in Product.objects.all()]
