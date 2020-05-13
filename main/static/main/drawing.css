@@ -17,6 +17,6 @@ circle {
     animation-name: disappear;
     animation-duration: 3s;
     animation-fill-mode: forwards;
-    animation-iteration-count: initial;
+    animation-iteration-count: 3;
     filter: blur(3px);
 }
