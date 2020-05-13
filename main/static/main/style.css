@@ -17,12 +17,6 @@ body {
     pointer-events: none;
 }
 
-@media (min-width: 576px) {
-    #logo {
-        height: 150px;
-    }
-}
-
 ul {
     height: 50px;
     padding-bottom: 10px;
@@ -123,4 +117,25 @@ li {
 
 #github-link {
     width: 50px;
+}
+
+
+/* Media queries */
+
+@media (min-width: 576px) {
+    #logo {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 578px) and (max-width: 855px) {
+    #main {
+        margin-top: 110px;
+    }
 }
