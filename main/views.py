@@ -1,4 +1,4 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from .models import Product, Quote, Article
 import random
@@ -30,6 +30,9 @@ def about(request):
     return render(request, 'main/about.html')
 
 def product(request, product_id):
-    product = Product.objects.get(pk=product_id)
-    data = product.toDict()
-    return render(request, 'main/product.html', {"product": product})
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        raise Http404("Product does not exist")
+    else:
+        return render(request, 'main/product.html', {"product": product})
