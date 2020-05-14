@@ -4,7 +4,9 @@
     <h1 class="display-3 text-center">News</h1>
     {% for n in news %}
     <div class="card mb-3 rounded-lg shadow-lg p-3 mb-5">
+        {% if n.image %}
         <img src="{{ n.image.url }}" class="card-img-top news-card-image" alt="News image">
+        {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ n.title }}</h5>
           <p class="card-text">{{ n.main_text }}</p>
