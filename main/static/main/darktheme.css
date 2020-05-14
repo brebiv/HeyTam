@@ -12,14 +12,14 @@
 
 html {
     animation-name: change_theme;
-    animation-duration: 7s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
 
 body {
     animation-name: change_theme;
-    animation-duration: 7s;
+    animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-play-state: running;
 }
