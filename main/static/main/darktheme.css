@@ -1,0 +1,52 @@
+/* Dark theme */
+
+@keyframes change_theme {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        background-color: black;
+    }
+}
+
+html {
+    animation-name: change_theme;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+body {
+    animation-name: change_theme;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+p, h1, h2, h3, h4, h5, a{
+    color: wheat;
+}
+
+.text-muted {
+    color: rgb(190, 175, 146);
+}
+
+.nav_button {
+    color: wheat;
+    border: 3px solid rgb(145, 146, 144);
+}
+
+.nav_button:hover {
+    background: rgb(36, 36, 36);
+    color:rgb(117, 117, 117);
+}
+
+.card {
+    background-color: black;
+    border: 3px solid gold;
+}
+
+#about-container {
+    background-color: black;
+}

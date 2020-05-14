@@ -3,7 +3,7 @@
 <div class="container" id="news-container">
     <h1 class="display-3 text-center">News</h1>
     {% for n in news %}
-    <div class="card mb-3 rounded-lg shadow-lg p-3 mb-5 bg-white">
+    <div class="card mb-3 rounded-lg shadow-lg p-3 mb-5">
         <img src="{{ n.image.url }}" class="card-img-top news-card-image" alt="News image">
         <div class="card-body">
           <h5 class="card-title">{{ n.title }}</h5>
