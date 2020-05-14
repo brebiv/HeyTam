@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from .models import Product, Quote
+from .models import Product, Quote, Article
 import random
 import json
 
@@ -18,7 +18,9 @@ def main(request):
     return render(request, 'main/main.html', {"quote": random_quote})
 
 def news(request):
-    return render(request, 'main/news.html')
+    all_news = Article.objects.all()
+    newest_news = reversed(list(all_news))  # To make news in right order, newest on the top.
+    return render(request, 'main/news.html', {"news": newest_news})
 
 def products(request):
     products = [p for p in Product.objects.all()]

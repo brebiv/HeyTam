@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     document.querySelectorAll("a").forEach(btn => {
         btn.onclick = function() {
             let name = this.dataset.name;
-            if (name == "products") {
+            if (name == "products" || name == "news") {
                 allowDrawing = false;
             } else if (name == "index" || name == "about") {
                 allowDrawing = true;
