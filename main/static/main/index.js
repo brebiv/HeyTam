@@ -18,11 +18,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (allowDrawing) {
             const coords = d3.mouse(this);
             const randomColor = getRandomColor();
+            if (theme == "bright") {
+                var color = 'black'
+                console.log('black')
+            } else {
+                console.log("wheat")
+                var color = "wheat"
+            }
             svg.append("circle")
                 .attr("cx", coords[0])
                 .attr("cy", coords[1])
                 .attr('r', 20)
-                .style('fill', "black")
+                .style('fill', color)
             currentDots++;
 
             if (currentDots > dotsLimit) {

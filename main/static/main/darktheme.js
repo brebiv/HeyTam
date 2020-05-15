@@ -6,6 +6,8 @@ function makeItDark() {
             $("#welcome-text").html("Welcome to Dark HeyTam!");
             $("#change-theme").html("Light");
             $("#change-theme").data('theme', 'dark');
+            theme = 'dark';
+            console.log("here make it dark")
         });
     });
 }
@@ -18,6 +20,7 @@ function makeItBright() {
             $("#welcome-text").html("Welcome back!");
             $("#change-theme").html("Dark");
             $("#change-theme").data('theme', 'bright');
+            theme = 'bright'
         });
     });
 }
