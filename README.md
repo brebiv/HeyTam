@@ -5,7 +5,7 @@ Single Page Application website. Made with Django Framework, JQuery, Bootstrap.
 ## Installation
 
 ```bash
-pip install django
+pip install django Pillow
 git clone https://github.com/brebiv/HeyTam
 cd HeyTam && python manage.py runserver
 ```
