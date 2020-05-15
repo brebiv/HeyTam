@@ -1,6 +1,3 @@
-# Database
-*.sqlite3
 # Python chache
 *.pyc
-# Media files related to database
-media
+

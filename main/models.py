@@ -5,7 +5,7 @@ import json
 def product_directory_path(instance, filename): 
   
     # file will be uploaded to MEDIA_ROOT / <title>/<filename> 
-    return '{0}/{1}'.format(instance.title.lower(), filename) 
+    return 'products/{0}/{1}'.format(instance.title.lower(), filename) 
 
 def article_directory_path(instance, filename):
     return 'news/{0}/{1}'.format(instance.title.lower(), filename)
