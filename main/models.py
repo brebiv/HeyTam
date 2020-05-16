@@ -19,17 +19,11 @@ class Product(models.Model):
     icon = models.ImageField(upload_to=product_directory_path, default=None, null=True, blank=True)
     image = models.ImageField(upload_to=product_directory_path, default=None, null=True)
 
-    def toDict(self) -> dict:
-        return dict({
-            "id": self.pk,
-            "title": self.title,
-            "short_description": self.short_description,
-            "description": self.description,
-            "github_link": self.github_link,
-            "product_file": self.product_file.url,
-            "icon": self.icon.url,
-            "image": self.image.url
-        })
+    def is_kindergarten(self):
+        if self.title == "Kindergarten":
+            return True
+        else: 
+            return False
 
     def __str__(self):
         return f"{self.title}"
