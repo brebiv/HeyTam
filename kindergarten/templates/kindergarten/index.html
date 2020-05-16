@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HeyTam - Kindergarten</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'kindergarten/style.css' %}">
+        <script src="{% static 'kindergarten/jquery.min.js' %}"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                HeyTam <span style="color:palevioletred">Kindergarten</span>
+            </div>
+
+            <div id="buttonContainer">
+                <div class="toggleButton active" id="html">HTML</div>
+                <div class="toggleButton" id="css">CSS</div>
+                <div class="toggleButton" id="js">JavaScript</div>
+                <div class="toggleButton active" id="result">Result</div>
+            </div>
+        </div>
+        <div id="bodyContainer">
+            <textarea id="htmlPanel" class="panel"><p id="example">It's HTML!</p></textarea>
+            <textarea id="cssPanel" class="panel hidden">p {color:green;}</textarea>
+            <textarea id="jsPanel" class="panel hidden">document.getElementById("example").innerHTML="here";</textarea>
+            <iframe id="resultPanel" class="panel"></iframe>
+        </div>
+        <script>
+            $("#htmlPanel").val(`<p id="example">HTML here</p>\n
+<div id ="container">
+    <div id ="animate"></div>
+</div>\n
+<button onclick="move();">Click Me</button>`);
+            $("#cssPanel").val(`#example {
+color: red;
+}
+
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: lightcyan;
+  /*Uncomment it if you want more HeyTam on this page*/
+  /*background-image: url("http://heytam.net/static/main/");
+  background-size:135px;*/
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: palevioletred;
+}
+`);
+            $("#jsPanel").val(`function move() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+} `);
+            function updateResults()
+            {
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>")
+                document.getElementById("resultPanel").contentWindow.eval($("#jsPanel").val())
+            }
+            $(".toggleButton").hover(function() {
+                $(this).addClass("highlightedButton");
+            }, function(){
+                $(this).removeClass("highlightedButton");
+            });
+
+            $(".toggleButton").click(function() {
+                $(this).toggleClass("active");
+                $(this).removeClass("highlightedButton");
+                var panelId = $(this).attr("id") + "Panel";
+                $("#"+panelId).toggleClass("hidden");
+                var numberOfActivePanels = 4 - $(".hidden").length;
+                $(".panel").width($(window).width() /numberOfActivePanels - 20)
+            });
+
+            $(".panel").height($(window).height() - $("#header").height() - 10)
+            $(".panel").width($(window).width() /2 - 10)
+            updateResults();
+            $("textarea").on('change keyup paste', function() {
+                updateResults();
+            });
+        </script>
+    </body>
+</html>
