@@ -13,7 +13,12 @@
                 <p id="short-description">{{ product.description }}</p>
             </div>
             <div class="row">
+                {% if product.github_link %}
                 <a href="{{ product.github_link }}"><img src="{% static 'main/CircleBlackWhite/Github_2.svg' %}" id="github-link"></a>
+                {% endif %}
+                {% if product.is_kindergarten %}    {# it's kinda silly #}
+                <a href="{% url 'kinder_index' %}">Check it</a>
+                {% endif %}
             </div>
         </div>
     </div>
